@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { View, ActivityIndicator } from 'react-native'
 import MasonryList from "react-native-masonry-list";
-import OverlayComponent from './overlayComponent';
+import BasicDetailsComponent from './BasicDetailsComponent';
 import Header from './HeaderComponent';
 
 
 
-export default class Detail_screen extends Component {
+export default class UserGallaryscreen extends Component {
     constructor(props) {
         super(props);
         this.loadMoreData = this.loadMoreData.bind(this)
@@ -30,7 +30,7 @@ export default class Detail_screen extends Component {
         var userName = this.props.navigation.state.params.name
 
         console.log("component name is===>", userName);
-            this.props.navigation.setParams({ user: userName });
+        this.props.navigation.setParams({ user: userName });
         fetch(`https://api.unsplash.com/users/${userName}/photos?client_id=27188885043579c212fdbf88c97812be03382d3a0e2b2f986dfa2b0719897d0a`)
             .then((response) => response.json())
             .then((responseJson) => {
@@ -111,7 +111,7 @@ export default class Detail_screen extends Component {
                     // onPressImage={() => this.props.navigation.navigate("detailScreen")}
                     renderIndividualHeader={(data, index) => {
                         return this.state.id == index ? (
-                            <OverlayComponent data={data} />) : <View />
+                            <BasicDetailsComponent data={data} />) : <View />
                     }
                     }
                 />

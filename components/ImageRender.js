@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { Image } from 'react-native-elements';
 import MasonryList from "react-native-masonry-list";
-import OverlayComponent from './overlayComponent';
+import BasicDetailsComponent from './BasicDetailsComponent';
 
 
 
@@ -93,7 +93,7 @@ export default class ImageRender extends Component {
 
         console.log("this is one", user);
         return (
-            <overlayComponent />
+            <BasicDetailsComponent />
         );
 
     }
@@ -134,7 +134,7 @@ export default class ImageRender extends Component {
                     onPressImage={(item) => this.props.navigation.navigate("detailScreen", { name: item.user.username })}
                     renderIndividualHeader={(data, index) => {
                         return this.state.id == index ? (
-                            <OverlayComponent data={data} />) : <View />
+                            <BasicDetailsComponent data={data} />) : <View />
                     }
                     }
 

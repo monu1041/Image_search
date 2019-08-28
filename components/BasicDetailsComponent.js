@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Overlay, Avatar, Card, Icon } from 'react-native-elements';
 
-export default class OverlayComponent extends Component {
+export default class BasicDetailsComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
